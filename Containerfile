@@ -12,7 +12,7 @@ RUN echo "enscript /opt/incoming/-o - | ps2pdf - /opt/outcoming/.txt"  >> /usr/l
 RUN echo "done"  >> /usr/local/bin/ascii2pdf
 RUN sed -i 's/text1/echo $FILE/g' /usr/local/bin/ascii2pdf
 RUN sed -i 's/-o/$FILE  -o/g'  /usr/local/bin/ascii2pdf
-RUN sed -i 's/.txt/$FILE.pdf/g'  /usr/local/bin/ascii2pdf
+RUN sed -i 's/.txt/$FILE/g'  /usr/local/bin/ascii2pdf
 RUN sed -i 's/#app=#/FILE=$/g'  /usr/local/bin/ascii2pdf
 RUN sed -i 's/datas/${CURRENT_DIR}/g'  /usr/local/bin/ascii2pdf
 RUN chmod 777 /usr/local/bin/ascii2pdf 

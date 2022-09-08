@@ -15,10 +15,6 @@ RUN sed -i 's/-o/$FILE  -o/g'  /usr/local/bin/ascii2pdf
 RUN sed -i 's/.txt/$FILE.pdf/g'  /usr/local/bin/ascii2pdf
 RUN sed -i 's/#app=#/FILE=$/g'  /usr/local/bin/ascii2pdf
 RUN sed -i 's/datas/${CURRENT_DIR}/g'  /usr/local/bin/ascii2pdf
-RUN chmod 777 /usr/local/bin/ascii2pdf
-#RUN ln -s /opt/incoming /opt/outcoming 
+RUN chmod 777 /usr/local/bin/ascii2pdf 
 RUN yum install -y http://content/rhel9.0/x86_64/dvd/AppStream/Packages/enscript-1.6.6-28.el9.x86_64.rpm  http://content/rhel9.0/x86_64/dvd/AppStream/Packages/ghostscript-9.54.0-7.el9.x86_64.rpm 
-#RUN timedatectl  set-timezone America/New_York
-#CMD [ "/usr/local/bin/file_watcher.py" ]
 CMD [ "/bin/bash", "-c", "/usr/local/bin/ascii2pdf" ]
-

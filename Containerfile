@@ -16,5 +16,5 @@ RUN sed -i 's/.txt/$FILE/g'  /usr/local/bin/ascii2pdf
 RUN sed -i 's/#app=#/FILE=$/g'  /usr/local/bin/ascii2pdf
 RUN sed -i 's/datas/${CURRENT_DIR}/g'  /usr/local/bin/ascii2pdf
 RUN chmod 777 /usr/local/bin/ascii2pdf 
-RUN yum install -y http://content/rhel9.0/x86_64/dvd/AppStream/Packages/enscript-1.6.6-28.el9.x86_64.rpm  http://content/rhel9.0/x86_64/dvd/AppStream/Packages/ghostscript-9.54.0-7.el9.x86_64.rpm 
+RUN yum install --skip-broken -y http://content/rhel9.0/x86_64/dvd/AppStream/Packages/enscript-1.6.6-28.el9.x86_64.rpm  http://content/rhel9.0/x86_64/dvd/AppStream/Packages/ghostscript-9.54.0-7.el9.x86_64.rpm 
 CMD [ "/bin/bash", "-c", "/usr/local/bin/ascii2pdf" ]
